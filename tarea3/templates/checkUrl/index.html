@@ -1,17 +1,12 @@
 <div class="container">
   <h1>
-    Primer Blog
+    Verificar URL
   </h1>
   
-  <h2>
-    Titulo
-  </h2>
-  
-  <h3>
-    Publicado el día por el autor
-  </h3>
-  
-  <p>
-    Contenido
-  </p>
+   <from action="/home/" method="post"> {%csrf_token}
+      <ul>
+         {{form.as_ul}}
+      </ul>
+      <input type="submit" name="submit" value="VerificarURL">
+   </form>
 </div>
