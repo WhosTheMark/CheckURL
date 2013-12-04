@@ -3,10 +3,10 @@
     Verificar URL
   </h1>
   
-   <from action="/home/" method="post"> {%csrf_token}
+   <form action="." method="post">{% csrf_token %}
       <ul>
          {{form.as_ul}}
       </ul>
-      <input type="submit" name="submit" value="VerificarURL">
+      <input type="submit" name="submit" value="Verificar URL">
    </form>
 </div>
