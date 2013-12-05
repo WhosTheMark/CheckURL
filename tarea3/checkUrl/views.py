@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 from django.shortcuts import render
 from form import URLForm
 from django.http import HttpResponseRedirect
@@ -8,9 +10,6 @@ from django.core.exceptions import ValidationError
 
 # Create your views here.
 
-#AGREGAR UTF-8 !!
-
-#Puede que valide el url antes de chequear (URLValidator)
 def home(request):
    args = {}
    args.update(csrf(request))
@@ -18,18 +17,21 @@ def home(request):
       form = URLForm(request.POST)
       if form.is_valid():
          validate = URLValidator()
-         direccion = form.cleaned_data['direccion']
+         address = form.cleaned_data['direccion']
          try:
-            validate(direccion)
+            validate(address)
          except ValidationError, e:
-            direccion = "http://" + direccion
+            address = "http://" + address
          try:
-            print urllib.urlopen(direccion).getcode()
-            args['resultado'] = "La pagina funciona!"
+            validate(address)
+            code = urllib.urlopen(address).getcode()
+            args['result'] = "La página funciona!"
          except IOError, e:
-            args['resultado'] = "Al parecer la pagina esta caida :("
+            args['result'] = "Al parecer la página esta caída :("
+         except ValidationError, e:
+            args['result'] = "Hmmm.. creo que esto no es un URL válido"
          return render(request, 'checkUrl/result.html', args)
-         # Falta chequear si el url funciona o no.
+
    form = URLForm()
    args['form'] = form
    return render(request, 'checkUrl/index.html', args) #por ahora sin el contexto diccionario.
