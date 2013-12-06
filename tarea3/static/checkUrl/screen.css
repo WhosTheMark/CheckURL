@@ -1,0 +1,40 @@
+
+
+* {margin:0;padding:0;} 
+
+h1 {font-family: 'Lobster', bold; 
+   color: #4EA18E;
+   font-size:80px
+}
+
+body {height: 87%;
+   background-color:#FFF4D4;
+}
+
+#wrap {min-height: 100%;
+      text-align:center;
+      vertical-align: center;
+}
+
+#main {overflow:auto;
+   line-height: 90px;
+   vertical-align: center;
+   margin-top:100px;
+}  /* must be same height as the footer */
+
+#footer {position: relative;
+   margin-top: -150px; /* negative value of footer height */
+   height: 90px;
+   clear:both;
+   background: #474DA1;
+   color: white;
+   font-size:18px;
+   text-align: right;
+   padding: 30px 50px;
+} 
+
+
+/* footer1 back 
+ * 474DA1 FFF4D4 */
+
+

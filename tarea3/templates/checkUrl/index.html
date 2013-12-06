@@ -1,18 +1,34 @@
 {% load staticfiles %}
-<body style="text-align: center; vertical-align: center; margin:10% 5% 0 5%">
-<!-- <link href="{{STATIC_URL}}other_style.css" rel="stylesheet" type="text/css">
--->
-<div class="container">
+<head> 
+   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+   <link href="{% static "checkUrl/screen.css" %}" rel="stylesheet" type="text/css">
+   <title>URLChecker: check if a website is up!</title> 
+</head>
+
+<body>
+<div id="wrap">
+<div id="main">
   <h1>
     URLChecker
   </h1>
 
-  <img src="{% static "checkUrl/logo.png" %}" alt="My image"/>
+  <!--<img src="{% static "checkUrl/logo.png" %}" alt="My image"/>-->
    <form action="." method="post">{% csrf_token %}
-      <ul>
          {{form}}
-      </ul>
-      <input type="submit" name="submit" value="Verificar URL">
+      <input type="submit" name="submit" value="Check your URL">
    </form>
 </div>
+
+</div>
+   <div id="footer">
+      Made by Marcos Campos
+      <br> Carnet: 10-10108
+      <br>
+      <a href="https://github.com/WhosTheMark">
+         <img src="{% static "checkUrl/git.png" %}" alt="Git Hub Account"/>
+      </a>
+      <a href="mailto:whosthemark@gmail.com">
+         <img src="{% static "checkUrl/mail.png" %}" alt="Mail"/>
+      </a>
+   </div>
 </body>
