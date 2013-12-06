@@ -25,11 +25,11 @@ def home(request):
          try:
             validate(address)
             code = urllib.urlopen(address).getcode()
-            args['result'] = "La página funciona!"
+            args['result'] = "Wohoo! The website works! \nOh, but... Maybe your computer has something wrong...?"
          except IOError, e:
-            args['result'] = "Al parecer la página esta caída :("
+            args['result'] = "Aww... the website is down );"
          except ValidationError, e:
-            args['result'] = "Hmmm.. creo que esto no es un URL válido"
+            args['result'] = "Hmmm... I think this is not a valid URL..."
          return render(request, 'checkUrl/result.html', args)
 
    form = URLForm()

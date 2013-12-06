@@ -7,18 +7,26 @@
 
 <body>
 <div id="wrap">
-<div id="main">
-  <h1>
-    URLChecker
-  </h1>
+   <div id="main">
 
-  <!--<img src="{% static "checkUrl/logo.png" %}" alt="My image"/>-->
-   <form action="." method="post">{% csrf_token %}
-         {{form}}
-      <input type="submit" name="submit" value="Check your URL">
-   </form>
-</div>
+      <img src="{% static "checkUrl/logo.png" %}" alt="My image"/>
+      <h1>
+         URLChecker
+      </h1>
 
+
+         <form action="." method="post">{% csrf_token %}
+               {{form.direccion}}
+            <input type="submit" class="submitButton" name="submit" value="Check your URL">
+
+         </form>
+
+   </div>
+
+<p>
+   Do you want to know if a website is running or if it's just your computer?
+   <br>Enter the address above to check it out!
+</p>
 </div>
    <div id="footer">
       Made by Marcos Campos

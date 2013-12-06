@@ -7,21 +7,11 @@ h1 {font-family: 'Lobster', bold;
    font-size:80px
 }
 
-h2 {font-size: 40px;
-   font-weight: normal;
-}
-
 body {height: 92%;
    background-color:#EEE4D4;
 }
 
 /*FFF4D4*/
-
-#result {overflow:auto;
-   vertical-align: center;
-   margin-top:60px;
-   padding: 0px 50px;
-}
 
 #wrap {min-height: 100%;
       text-align:center;

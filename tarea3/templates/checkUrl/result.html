@@ -1,12 +1,35 @@
-<div class="container">
-  <h1>
-    {{result}}
-  </h1>
+{% load staticfiles %}
 
-<form action="/">
-    <input type="submit" value="Intentar de nuevo?">
-</form>
+<head> 
+   <link href="{% static "checkUrl/screen.css" %}" rel="stylesheet" type="text/css">
+   <title>URLChecker: check if a website is up!</title> 
+</head>
 
-   
+<body>
+   <div id="wrap">
+      <div id="result">
+         <h2>
+            {{result}}
+         </h2>
 
-</div>
+         <br><br><br>
+         <form action="/">
+            <input type="submit" class="submitButton"
+                  value="Do you want to try another website?">
+         </form>
+      </div>
+   </div>
+
+   <div id="footer">
+      Made by Marcos Campos
+      <br> Carnet: 10-10108
+      <br>
+      <a href="https://github.com/WhosTheMark">
+         <img src="{% static "checkUrl/git.png" %}" alt="Git Hub Account"/>
+      </a>
+      <a href="mailto:whosthemark@gmail.com">
+         <img src="{% static "checkUrl/mail.png" %}" alt="Mail"/>
+      </a>
+   </div>
+
+</body>
