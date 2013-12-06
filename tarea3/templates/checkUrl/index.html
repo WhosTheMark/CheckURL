@@ -1,14 +1,16 @@
-
+{% load staticfiles %}
 <body style="text-align: center; vertical-align: center; margin:10% 5% 0 5%">
-
+<!-- <link href="{{STATIC_URL}}other_style.css" rel="stylesheet" type="text/css">
+-->
 <div class="container">
   <h1>
     URLChecker
   </h1>
-  
+
+  <img src="{% static "checkUrl/logo.png" %}" alt="My image"/>
    <form action="." method="post">{% csrf_token %}
       <ul>
-         {{form.as_ul}}
+         {{form}}
       </ul>
       <input type="submit" name="submit" value="Verificar URL">
    </form>
